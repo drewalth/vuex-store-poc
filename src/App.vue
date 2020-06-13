@@ -12,6 +12,14 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  created() {
+    this.$store.dispatch('User/getProperty', {
+      url: 'user-endpoint'
+    })
+    this.$store.dispatch('Bookmarks/getProperty', {
+      url: 'bookmarks-endpoint'
+    })
   }
 }
 </script>
