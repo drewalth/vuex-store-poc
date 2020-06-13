@@ -13,13 +13,15 @@ export default {
   components: {
     HelloWorld
   },
-  created() {
+  created () {
     this.$store.dispatch('User/getProperty', {
       url: 'user-endpoint'
     })
     this.$store.dispatch('Bookmarks/getProperty', {
       url: 'bookmarks-endpoint'
     })
+
+    this.$store.dispatch('Bookmarks/customAction')
   }
 }
 </script>

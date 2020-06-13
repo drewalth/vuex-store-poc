@@ -1,14 +1,17 @@
-import actions from "../actions"
-import mutations from "../mutations"
-
+import actions from '../actions'
+import mutations from '../mutations'
 
 export default {
   namespaced: true,
   state: {
     error: false,
     loading: false,
-    data: null,
+    data: null
   },
-  actions,
+  actions: Object.assign(actions, {
+    async customAction () {
+      console.log('Custom action')
+    }
+  }),
   mutations
 }
